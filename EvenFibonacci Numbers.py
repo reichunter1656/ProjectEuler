@@ -12,4 +12,4 @@ def fibonacci(sum = 0):
 	return sum, b
 
 sum, b = fibonacci()
-print sum, b
+print sum
