@@ -8,7 +8,7 @@ public class LargestPrimeFactor
 	public static void main(String args[])
 	{
 
-		long number = 999999;
+		long number = 16;
 		System.out.println(findLargestFactor(number));
 	}
 
@@ -20,6 +20,7 @@ public class LargestPrimeFactor
 		while (n%2 == 0)
 		{
 			largest = 2;
+			n = n/2;
 		}
 
 		for (int i=3;i<=Math.sqrt(n);i=i+2)
