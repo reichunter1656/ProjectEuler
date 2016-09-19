@@ -1,6 +1,7 @@
 /* http://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/ */
 
 import java.lang.Math;
+import java.util.*;
 
 public class LargestPrimeFactor
 {
@@ -9,10 +10,10 @@ public class LargestPrimeFactor
 	{
 
 		long number = 16;
-		System.out.println(findLargestFactor(number));
+		System.out.println(findLargestFactor(number, new ArrayList<Long>()));
 	}
 
-	private static long findLargestFactor(long n)
+	private static long findLargestFactor(long n, ArrayList<Long> list)
 	{
 
 		long largest = 0L;
@@ -20,6 +21,7 @@ public class LargestPrimeFactor
 		while (n%2 == 0)
 		{
 			largest = 2;
+			list.add(2L);
 			n = n/2;
 		}
 
@@ -28,6 +30,7 @@ public class LargestPrimeFactor
 			while(n%i==0)
 			{
 				largest = i;
+				list.add((long)i);
 				n = n / i;
 			}
 		}
@@ -35,8 +38,15 @@ public class LargestPrimeFactor
 		if (n > 2)
 		{
 			largest = n;
+			list.add(n);
 		}
 
 		return largest;
+	}
+
+	public static long findLargestFactorPublic(long n, ArrayList<Long> temp)
+	{
+
+		return findLargestFactor(n, temp);
 	}
 }
