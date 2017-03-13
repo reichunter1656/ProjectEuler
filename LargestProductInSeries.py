@@ -19,7 +19,7 @@ while j <= 1000:
 	 l = tolist(number[i:j + 1])
 	 print (l)
 	 prod = reduce(mul, l, 1)
-	 print (prod, maximum)
+	 # print (prod, maximum)
 	 if prod > maximum:
 	 	maximum = prod
 	 i= i + 1
